@@ -13,10 +13,19 @@ struct DynamicArray
 	
 	/// @brief Фактор роста вместимости массива
 	const int GrowthFactor = 2;
+
+	/// @brief Конструктор динамического массива
+	DynamicArray()
+	{
+		int capacity = 8;
+		Capacity = capacity;
+		Length = 0;
+		Array = new int[Capacity];
+	}
 };
-/// @brief Создание динамического массива
-/// @param Динамический массив 
-void CreateDynamicArray(DynamicArray* dynamicArray);
+///// @brief Создание динамического массива
+///// @param Динамический массив 
+//void CreateDynamicArray(DynamicArray* dynamicArray);
 
 /// @brief Изменение вместимости массива
 /// @param Динамический массив 

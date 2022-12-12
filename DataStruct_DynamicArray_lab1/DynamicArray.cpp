@@ -4,14 +4,14 @@
 //TODO: remove from DS
 using namespace std;
 
-void CreateDynamicArray(DynamicArray* dynamicArray)
-{
-	//TODO: to struct init
-	int capacity = 8;
-	dynamicArray->Capacity = capacity;
-	dynamicArray->Length = 0;
-	dynamicArray->Array = new int[dynamicArray->Capacity];
-}
+//void CreateDynamicArray(DynamicArray* dynamicArray)
+//{
+//	//TODO: to struct init
+//	int capacity = 8;
+//	dynamicArray->Capacity = capacity;
+//	dynamicArray->Length = 0;
+//	dynamicArray->Array = new int[dynamicArray->Capacity];
+//}
 
 void ResizeArray(DynamicArray* dynamicArray)
 {

@@ -49,7 +49,7 @@ int main()
 			"10. Remove Element\n";
 	while (true)
 	{	
-		//TODO: input sanitizing                        ,          duplication is fixed
+		//TODO: input sanitizing is fixed                       ,          duplication is fixed
 		int taskNumber = CheckingForDigit("Enter task number: ");
 		cout << endl;
 		if (taskNumber <=10 && taskNumber >= 1)
@@ -58,7 +58,7 @@ int main()
 			{
 				case 1:
 				{
-					CreateDynamicArray(array);
+					DynamicArray(array);
 					cout << "Array is created.\n" << endl;
 					break;
 				}
