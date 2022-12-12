@@ -72,6 +72,7 @@ int BinarySearch(DynamicArray* dynamicArray, int element)
 		if (dynamicArray->Array[middle] == element)
 		{
 			flag = true;
+			index = middle;
 		}
 		else if (dynamicArray->Array[middle] < element)
 		{

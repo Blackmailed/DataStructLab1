@@ -88,14 +88,23 @@ int main()
 					cout << "Enter index of element which u want add: ";
 					cin >> index;
 					InsertElement(array, element, index);
-
+					break;
 				}
 				case 8:
 				{
 					int element;
+					int index;
 					cout << "Enter element which u want find with Linear Search: ";
 					cin >> element;
-					LinearSearch(array, element);
+					index = LinearSearch(array, element);
+					if (index == -1)
+					{
+						cout << "There os no such value in the arrray." << endl;
+					}
+					else
+					{
+						cout << "Index of this element: " << index << endl;
+					}
 					cout << "\n";
 					break;
 				}
