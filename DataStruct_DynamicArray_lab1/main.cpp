@@ -2,11 +2,37 @@
 #include "DynamicArray.h"
 using namespace std;
 
-void TaskNumber(int&  taskNumber)
+int CheckingForDigit(string outputString)
 {
-	cout << "Enter task number: ";
-	cin >> taskNumber;
-	cout << endl;
+	if (outputString != "")
+	{
+		cout << outputString;
+	}
+
+	int value;
+
+	while (true)
+	{
+		cin >> value;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "\nError has been detected. Try again! \nEnter task number: ";
+			continue;
+		}
+
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		if (cin.gcount() > 1)
+		{
+			cout << "\nError has been detected. Try again! \nEnter task number: ";
+			continue;
+		}
+
+		break;
+	}
+
+	return value;
 }
 
 int main()
@@ -19,13 +45,13 @@ int main()
 			"6. Push forward\n"
 			"7. Insert element in some index\n"
 			"8. Linear Search\n"
-			"9. Binary Search\n";
+			"9. Binary Search\n"
 			"10. Remove Element\n";
 	while (true)
 	{	
 		//TODO: input sanitizing                        ,          duplication is fixed
-		int taskNumber;
-		TaskNumber(taskNumber);
+		int taskNumber = CheckingForDigit("Enter task number: ");
+		cout << endl;
 		if (taskNumber <=10 && taskNumber >= 1)
 		{
 			switch (taskNumber)
@@ -38,9 +64,7 @@ int main()
 				}
 				case 2:
 				{
-					int length;
-					cout << "Enter length of your dynamic array: ";
-					cin >> length;
+					int length = CheckingForDigit("Enter length of your dynamic array: ");
 					FillArray(array, length);
 					cout << "\n";
 					break;
@@ -63,39 +87,29 @@ int main()
 				}
 				case 5:
 				{
-					int element;
-					cout << "Enter element which u want push back: ";
-					cin >> element;
+					int element = CheckingForDigit("Enter element which u want push back: ");
 					PushBack(array, element);
 					cout << "\n";
 					break;
 				}
 				case 6:
 				{
-					int element;
-					cout << "Enter element which u want push forward: ";
-					cin >> element;
+					int element = CheckingForDigit("Enter element which u want push forward: ");
 					PushForward(array, element);
 					cout << "\n";
 					break;
 				}
 				case 7:
 				{
-					int element;
-					int index;
-					cout << "Enter element which u want add: ";
-					cin >> element;
-					cout << "Enter index of element which u want add: ";
-					cin >> index;
+					int element = CheckingForDigit("Enter element which u want add: ");
+					int index = CheckingForDigit("Enter index of element which u want add: ");
 					InsertElement(array, element, index);
 					break;
 				}
 				case 8:
 				{
-					int element;
+					int element = CheckingForDigit("Enter element which u want find with Linear Search: ");;
 					int index;
-					cout << "Enter element which u want find with Linear Search: ";
-					cin >> element;
 					index = LinearSearch(array, element);
 					if (index == -1)
 					{
@@ -110,10 +124,8 @@ int main()
 				}
 				case 9:
 				{
-					int element;
+					int element = CheckingForDigit("Enter element which u want find with Binary Search: ");;
 					int index;
-					cout << "Enter element which u want find with Binary Search: ";
-					cin >> element;
 					index = BinarySearch(array, element);
 					if (index != -1)
 					{
@@ -128,10 +140,8 @@ int main()
 				}
 				case 10: 
 				{
-					int index;
+					int index = CheckingForDigit("Enter index which you want to remove: ");;
 					bool flag;
-					cout << "Enter index which you want to remove: ";
-					cin >> index;
 					flag = RemoveElement(array, index);
 					if (flag == false)	
 					{

@@ -173,12 +173,15 @@ bool RemoveElement(DynamicArray* dynamicArray, int index)
 void FillArray(DynamicArray* dynamicArray, int length)
 {
 	srand(time(nullptr));
-	for (int i = 0; i < length; i++)
+	if (dynamicArray->Length == 0)
 	{
-		PushBack(dynamicArray, rand());
-	}
-	if (dynamicArray->Length >= dynamicArray->Capacity)
-	{
-		ResizeArray(dynamicArray);
+		for (int i = 0; i < length; i++)
+		{
+			PushBack(dynamicArray, rand());
+		}
+		if (dynamicArray->Length >= dynamicArray->Capacity)
+		{
+			ResizeArray(dynamicArray);
+		}
 	}
 }
