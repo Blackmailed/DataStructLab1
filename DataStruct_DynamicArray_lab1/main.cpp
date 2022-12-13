@@ -48,8 +48,7 @@ int main()
 			"9. Binary Search\n"
 			"10. Remove Element\n";
 	while (true)
-	{	
-		//TODO: input sanitizing is fixed                       ,          duplication is fixed
+	{
 		int taskNumber = CheckingForDigit("Enter task number: ");
 		cout << endl;
 		if (taskNumber <=10 && taskNumber >= 1)

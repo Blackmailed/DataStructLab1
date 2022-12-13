@@ -1,17 +1,8 @@
 #include "DynamicArray.h"
 #include <xmemory>
 #include <time.h>
-//TODO: remove from DS
-using namespace std;
 
-//void CreateDynamicArray(DynamicArray* dynamicArray)
-//{
-//	//TODO: to struct init
-//	int capacity = 8;
-//	dynamicArray->Capacity = capacity;
-//	dynamicArray->Length = 0;
-//	dynamicArray->Array = new int[dynamicArray->Capacity];
-//}
+using namespace std;
 
 void ResizeArray(DynamicArray* dynamicArray)
 {
@@ -21,7 +12,6 @@ void ResizeArray(DynamicArray* dynamicArray)
 	}
 	else
 	{
-		//TODO: to const    growthFactor is fixed
 		dynamicArray->Capacity -= dynamicArray->Capacity / dynamicArray->GrowthFactor;
 	}
 
@@ -100,7 +90,6 @@ int LinearSearch(DynamicArray* dynamicArray, int value)
 	return index;
 }
 
-//TODO naming	fixed
 void PushBack(DynamicArray* dynamicArray, int element)
 {
 	dynamicArray->Length++;
@@ -111,7 +100,6 @@ void PushBack(DynamicArray* dynamicArray, int element)
 	dynamicArray->Array[dynamicArray->Length - 1] = element;
 }
 
-//TODO naming	fixed
 void PushForward(DynamicArray* dynamicArray, int value)
 {
 	dynamicArray->Length++;

@@ -23,6 +23,7 @@ struct DynamicArray
 		Array = new int[Capacity];
 	}
 };
+
 ///// @brief Создание динамического массива
 ///// @param Динамический массив 
 //void CreateDynamicArray(DynamicArray* dynamicArray);
